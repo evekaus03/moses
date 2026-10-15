@@ -6,7 +6,7 @@ static uint8_t ppu[8];
 static uint8_t io[0x18];
 static uint8_t test_mode_io[0x8];
 
-uint8_t read_addr(uint16_t addr) {
+uint8_t read_addr(NES *nes, uint16_t addr) {
     // note: as components are properly emulated, this will
     // be changed to provide their proper read/write behavior
     if (addr < 0x2000) {
@@ -26,7 +26,7 @@ uint8_t read_addr(uint16_t addr) {
     return 0;
 }
 
-void write_addr(uint16_t addr, uint8_t data) {
+void write_addr(NES *nes, uint16_t addr, uint8_t data) {
     // note: as components are properly emulated, this will
     // be changed to provide their proper read/write behavior
     if (addr < 0x2000) {

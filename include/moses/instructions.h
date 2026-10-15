@@ -5,6 +5,9 @@
 
 #include <stdint.h>
 
+#include "cpu.h"
+#include "nes.h"
+
 /*
  * this struct holds opcodes & addressing modes for group 1 instructions,
  * and can set the current op/mode using enum members.
@@ -18,7 +21,7 @@ typedef struct {
         STA,
         LDA,
         CMP,
-        SCB
+        SBC
     }op;
 
     enum {
@@ -90,5 +93,5 @@ typedef struct {
 } InstrCond;
 
 /* takes in 8-bit data to parse for which instruction it is. */
-void parse_instruction(uint8_t opcode);
+void parse_instruction(NES *nes, uint8_t opcode);
 

@@ -65,15 +65,15 @@ void nes_step_next_instruction();
 // addr =>	[Inst 1]
 // 			[operand]
 // 			[Inst 2]
-void nes_run_to_instruction(reg16 addr);
+void nes_run_to_instruction(NES *nes, reg16 addr);
 
 /* Retrieve the byte at the specified address
  * in the memory map.
  */
-uint8_t read_addr(uint16_t addr);
+uint8_t read_addr(NES *nes, uint16_t addr);
 
 /* Write the specified byte to the specified
  * address in the memory map.
  */
-void write_addr(uint16_t addr, uint8_t data);
+void write_addr(NES *nes, uint16_t addr, uint8_t data);
 
